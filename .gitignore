@@ -20,6 +20,7 @@ xcuserdata/
 **/xcuserdata/*
 source/MDemo/MDemo.xcodeproj/project.xcworkspace/
 source/MFramework/Products/
+source/MFramework/MFramework.xcodeproj/xcshareddata/
 
 ## Other
 *.xcworkspacedata

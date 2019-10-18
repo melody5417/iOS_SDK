@@ -38,6 +38,8 @@
 ![创建target](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-1创建target.png)
 ![创建aggregate](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-2 创建 aggregate.png)
 ![6-3 创建aggregate 预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3 创建aggregate 预览.png)
+![6-3 创建aggregate 预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3_2 创建aggregate 预览.png)
+![6-3 创建aggregate 预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3_3 创建aggregate 预览.png)
 ![6-4 设置 target dependencies](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-4 设置 target dependencies.png)
 ![6-5 创建build 脚本](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-5 创建build 脚本.png)
 ![6-5_2 创建build 脚本](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-5_2 创建build 脚本.png)
@@ -72,10 +74,13 @@ open "${SRCROOT}/Products"
 
 
 ## 持续构建 自动发布
-1. 蓝盾证书管理
-2. 脚本修改
+
+
+
 ## 版本号设置
+
 ## 文档 历史版本
+
 ## 归档哪些文件
 
 
