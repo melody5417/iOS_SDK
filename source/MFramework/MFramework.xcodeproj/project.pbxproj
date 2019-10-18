@@ -6,11 +6,36 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4F7361A12359681B00C8C2CC /* MFrameworkCommon */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4F7361A42359681B00C8C2CC /* Build configuration list for PBXAggregateTarget "MFrameworkCommon" */;
+			buildPhases = (
+				4F7361A82359688400C8C2CC /* ShellScript */,
+			);
+			dependencies = (
+				4F7361A72359686D00C8C2CC /* PBXTargetDependency */,
+			);
+			name = MFrameworkCommon;
+			productName = MFrameworkCommon;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4FBAE44923502E0D007D7346 /* MFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBAE44723502E0D007D7346 /* MFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FBAE47723503021007D7346 /* Cat.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBAE47523503021007D7346 /* Cat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FBAE47823503021007D7346 /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBAE47623503021007D7346 /* Cat.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F7361A62359686D00C8C2CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FBAE43B23502E0D007D7346 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FBAE44323502E0D007D7346;
+			remoteInfo = MFramework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4FBAE44423502E0D007D7346 /* MFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +125,9 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = melody5417;
 				TargetAttributes = {
+					4F7361A12359681B00C8C2CC = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					4FBAE44323502E0D007D7346 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -118,6 +146,7 @@
 			projectRoot = "";
 			targets = (
 				4FBAE44323502E0D007D7346 /* MFramework */,
+				4F7361A12359681B00C8C2CC /* MFrameworkCommon */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +161,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F7361A82359688400C8C2CC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TARGET_NAME=${PROJECT_NAME}\nOUTPUT_DIR=${SRCROOT}/Products/${TARGET_NAME}.framework\nDEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework\nSIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${TARGET_NAME}.framework\n\nif [ -d \"${OUTPUT_DIR}\" ]\nthen\nrm -rf \"${OUTPUT_DIR}\"\nfi\n\nmkdir -p \"${OUTPUT_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${OUTPUT_DIR}/\"\n\nlipo -create \"${DEVICE_DIR}/${TARGET_NAME}\" \"${SIMULATOR_DIR}/${TARGET_NAME}\" -output \"${OUTPUT_DIR}/${TARGET_NAME}\"\n\nopen \"${SRCROOT}/Products\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4FBAE44023502E0D007D7346 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,7 +192,33 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4F7361A72359686D00C8C2CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FBAE44323502E0D007D7346 /* MFramework */;
+			targetProxy = 4F7361A62359686D00C8C2CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		4F7361A22359681B00C8C2CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 466M85ZLTB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4F7361A32359681B00C8C2CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 466M85ZLTB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		4FBAE44A23502E0D007D7346 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -316,6 +391,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4F7361A42359681B00C8C2CC /* Build configuration list for PBXAggregateTarget "MFrameworkCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F7361A22359681B00C8C2CC /* Debug */,
+				4F7361A32359681B00C8C2CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4FBAE43E23502E0D007D7346 /* Build configuration list for PBXProject "MFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

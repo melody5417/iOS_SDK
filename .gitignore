@@ -19,6 +19,7 @@ DerivedData/
 xcuserdata/
 **/xcuserdata/*
 source/MDemo/MDemo.xcodeproj/project.xcworkspace/
+source/MFramework/Products/
 
 ## Other
 *.xcworkspacedata
