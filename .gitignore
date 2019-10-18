@@ -17,8 +17,11 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+**/xcuserdata/*
+source/MDemo/MDemo.xcodeproj/project.xcworkspace/
 
 ## Other
+*.xcworkspacedata
 *.moved-aside
 *.xcuserstate
 
