@@ -115,22 +115,67 @@
 * MDemo 工程集成 SDK 产物 MFramework.framework，添加 Embedded Binaries 和 Linked Frameworks.
 ![6-9 framework集成到demo](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-9 framework集成到demo.png)
 
-
-
-![](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/.png)
-![](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/.png)
-
 ## 持续构建 自动发布
 
-每次发布都手动打包，不仅繁琐，耗人工，而且容易出现遗漏甚至错误。下面介绍下如何配置，达到持续构建和自动发布。
+每次发布都手动打包，不仅繁琐，耗人工，而且容易出现遗漏甚至错误。下面介绍下如何达到持续构建和自动发布。在 workspace 根目录创建构建脚本 build.sh，命令行运行脚本 sudo ./build.sh, 则会在 workspace 根目录下创建 result 文件夹并生成目标产物。
+
+* 目标产物预览
+![7-1framework自动构建预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/7-1framework自动构建预览.png)
+
+* 脚本代码
+
+```
+# 环境变量
+#version=$MajorVersion"."$MinorVersion"."$FixVersion"."$BuildNo
+#shortVersion=$MajorVersion"."$MinorVersion"."$FixVersion
+version=2.3.4.5
+shortVersion=2.3.4
+
+xcworkspace="DevFramework"
+scheme="MFramework"
+configuration="Release"
+
+WORKSPACE=`pwd`
+RESULT_DIR=$WORKSPACE/result
+
+# 清理工作区
+rm -r ~/Library/Developer/Xcode/Archives/`date +%Y-%m-%d`/$scheme\ *.xcarchive
+xcodebuild clean -workspace $xcworkspace.xcworkspace -scheme $scheme -configuration $configuration
+
+# 更新版本号
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $version" $scheme/$scheme/Info.plist
+/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $shortVersion" $scheme/$scheme/Info.plist
+
+# 分别编译真机和模拟器的 framework
+xcodebuild -workspace $xcworkspace.xcworkspace -scheme $scheme -configuration $configuration ONLY_ACTIVE_ARCH=NO -sdk iphoneos BUILD_DIR="$RESULT_DIR" BUILD_ROOT="${BUILD_ROOT}" clean build
+if ! [ $? = 0 ] ;then
+    echo "xcodebuild iphoneos fail"
+    exit 1
+fi
+
+xcodebuild -workspace $xcworkspace.xcworkspace -scheme $scheme -configuration $configuration ONLY_ACTIVE_ARCH=NO -sdk iphonesimulator BUILD_DIR="$RESULT_DIR" BUILD_ROOT="${BUILD_ROOT}" clean build
+if ! [ $? = 0 ] ;then
+    echo "xcodebuild iphonesimulator fail"
+    exit 1
+fi
+
+# 合并 framework，输出适用真机和模拟器的 framework 到 result 目录
+cp -R "$RESULT_DIR/${configuration}-iphoneos/${scheme}.framework/" "$RESULT_DIR/${scheme}_${version}.framework/"
+lipo -create "$RESULT_DIR/$configuration-iphonesimulator/${scheme}.framework/${scheme}" "$RESULT_DIR/${configuration}-iphoneos/${scheme}.framework/${scheme}" -output "$RESULT_DIR/${scheme}_${version}.framework/${scheme}"
+if ! [ $? = 0 ] ;then
+    echo "lipo create framework fail"
+    exit 1
+fi
+
+```
 
 
 
 
-## 版本号设置
+### 版本号设置
 
-## 文档 历史版本
+### 文档 历史版本
 
-## 归档哪些文件
+### 归档哪些文件
 
 
