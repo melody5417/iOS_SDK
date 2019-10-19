@@ -45,7 +45,7 @@
 ![公开头文件](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_9framework添加public%20header_1.png)
 
 * 在 MFramework.h 文件中引入所有公开的头文件
-![公开头文件](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_10framework添加public%20header_2.png
+![公开头文件](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_10framework添加public%20header_2.png)
 
 ## 创建 Demo 工程
 
@@ -106,7 +106,7 @@
 ![6-6 build 模拟器版本的framework](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-6%20build%20模拟器版本的framework.png)
 
 * 构建 MFramework 的真机产物
-![6-6 build build镇机的framework](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-6%20build build镇机的framework.png)
+![6-6 build build镇机的framework](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-6%20build%20build镇机的framework.png)
 
 * 构建 MFrameworkCommon，通过 Build Script 会产生 **支持模拟器和真机的 SDK 产物**。
 ![6-7 build aggregate](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-7%20build%20aggregate.png)
