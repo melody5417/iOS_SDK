@@ -1,6 +1,6 @@
 # iOS SDK 从开发到发布
 
-最近在做封装 SDK（Framework） 的工作，本篇文章将记录 iOS SDK 从开发到发布的具体流程，注意事项和经验总结。代码可在 [github链接](https://github.com/melody5417/iOS_SDK) 下载。
+最近在做封装 SDK（Framework） 的工作，本篇文章将记录 iOS SDK 从开发到发布的具体流程和经验总结。本文主要以图片形式展示，毕竟有图才是王道嘛，代码可在 [github链接](https://github.com/melody5417/iOS_SDK) 下载。
 
 首先介绍下创建 SDK 工程以及对应 Demo 工程的具体流程。
 
@@ -69,45 +69,60 @@
 
 ## 本地打包 手动发布
 
+创建 Cross-platform 的 Aggregate，执行 build 脚本，通过 lipo 命令将之前构建好的 **模拟器架构的 SDK 产物** 和 **真机架构的 SDK 产物** 合成 **适用于真机和模拟器的 SDK 产物**
+
+* 创建 Cross-platform 的 Aggregate
 ![创建target](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-1创建target.png)
 ![创建aggregate](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-2 创建 aggregate.png)
 ![6-3 创建aggregate 预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3 创建aggregate 预览.png)
-![6-3 创建aggregate 预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3_2 创建aggregate 预览.png)
-![6-3 创建aggregate 预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3_3 创建aggregate 预览.png)
+
+* 修改 Configuration, 添加 Dependency 和 Build Script 
+![6-3 创建aggregate 预览](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3_3 修改common configuration.png)
 ![6-4 设置 target dependencies](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-4 设置 target dependencies.png)
 ![6-5 创建build 脚本](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-5 创建build 脚本.png)
 ![6-5_2 创建build 脚本](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-5_2 创建build 脚本.png)
+
+* 脚本代码
+
+	```
+	TARGET_NAME=${PROJECT_NAME}
+	OUTPUT_DIR=${SRCROOT}/Products/${TARGET_NAME}.framework
+	DEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework
+	SIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${TARGET_NAME}.framework
+	
+	if [ -d "${OUTPUT_DIR}" ]
+	then
+	rm -rf "${OUTPUT_DIR}"
+	fi
+	
+	mkdir -p "${OUTPUT_DIR}"
+	cp -R "${DEVICE_DIR}/" "${OUTPUT_DIR}/"
+	
+	lipo -create "${DEVICE_DIR}/${TARGET_NAME}" "${SIMULATOR_DIR}/${TARGET_NAME}" -output "${OUTPUT_DIR}/${TARGET_NAME}"
+	
+	open "${SRCROOT}/Products"
+	```
+* 构建 MFramework 的模拟器产物
 ![6-6 build 模拟器版本的framework](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-6 build 模拟器版本的framework.png)
+
+* 构建 MFramework 的真机产物
 ![6-6 build build镇机的framework](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-6 build build镇机的framework.png)
+
+* 构建 MFrameworkCommon，通过 Build Script 会产生 **支持模拟器和真机的 SDK 产物**。
 ![6-7 build aggregate](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-7 build aggregate.png)
 ![6-8 适用真机及模拟器的framework](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-8 适用真机及模拟器的framework.png)
+
+* MDemo 工程集成 SDK 产物 MFramework.framework，添加 Embedded Binaries 和 Linked Frameworks.
 ![6-9 framework集成到demo](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-9 framework集成到demo.png)
+
+
+
 ![](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/.png)
 ![](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/.png)
-
-脚本代码
-
-```
-TARGET_NAME=${PROJECT_NAME}
-OUTPUT_DIR=${SRCROOT}/Products/${TARGET_NAME}.framework
-DEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework
-SIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${TARGET_NAME}.framework
-
-if [ -d "${OUTPUT_DIR}" ]
-then
-rm -rf "${OUTPUT_DIR}"
-fi
-
-mkdir -p "${OUTPUT_DIR}"
-cp -R "${DEVICE_DIR}/" "${OUTPUT_DIR}/"
-
-lipo -create "${DEVICE_DIR}/${TARGET_NAME}" "${SIMULATOR_DIR}/${TARGET_NAME}" -output "${OUTPUT_DIR}/${TARGET_NAME}"
-
-open "${SRCROOT}/Products"
-```
-
 
 ## 持续构建 自动发布
+
+每次发布都手动打包，不仅繁琐，耗人工，而且容易出现遗漏甚至错误。下面介绍下如何配置，达到持续构建和自动发布。
 
 
 
