@@ -6,11 +6,11 @@
 
 ## 创建 SDK 工程
 
-### 创建 workspace，用以管理 SDK 和 Demo project
+### 创建 DevFramework workspace，用以管理 SDK 和 Demo project
 
 ![创建workspace](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/1创建workspace.png)
 
-### 创建 Cocoa Touch Framework，并加入到之前创建的 workspace 里
+### 创建 Cocoa Touch Framework: MFramework，并加入到之前创建的 DevFramework workspace 里
 
 ![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_2创建动态库.png)
 
@@ -59,7 +59,7 @@
 ![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/3_4创建demo%20project_4.png)
 ![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/4工程全部创建完预览.png)
 
-### 集成 SDK 测试
+### 集成 SDK
 * 在 Target -> General 配置 Linked Framework 和 Embeded Binaries 为 MFramework
 ![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/5_1demo添加embeded和link.png)
 
@@ -169,9 +169,34 @@ fi
 
 ```
 
-### 版本号设置
+## 版本号设置
 Framework 一定要配置版本号的，这样方便用户（SDK使用者）接入合适目标版本，也有利于后期的定位问题和开发维护。
 版本号格式推荐是 **主版本.特性版本.修正版本.持续构建build号**，具体如何配置可以参考上面的【持续构建 自动发布】。
+
+## 上架 App Store
+为了让用户（SDK使用者）可以进行模拟器和真机的开发调试，上述步骤生成的 SDK 包含了4个架构: **i386**  **x86_64**  **armv7** **arm64**。其中 **i386**  **x86_64** 是Mac处理器的指令集，运行模拟器的架构，在提交 App Store 时需要移除。
+
+![8-1开发版本](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/8-1开发版本.png)
+
+![8-2appstore版本](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/8-2appstore版本.png)
+
+
+```
+# TARGET 代表framework的名字
+
+cd TARGET.framework # 跳转到 framework 目录
+
+lipo -archs TARGET   # 查看framework支持的架构
+
+lipo TARGET -thin armv7 -output TARGET_armv7 # 输出 armv7 架构
+
+lipo TARGET -thin arm64 -output TARGET_arm64 # 输出 arm64 架构
+
+lipo -create TARGET_armv7 TARGET_arm64 -output TARGET # 合并 armv7 和 arm64 架构
+```
+
+这个脚本也可以放到 build.sh 中，这样可以一次构建同时出 开发版 和 发布版，避免了手动操作可能引入的问题，同时达到持续构建 自动归档的目标。
+
 
 ## 结语
 看到这里，iOS SDK 开发到发布的基本流程都已走通。当然 SDK 的开发工作远不止这些，更多的坑和经验还要靠各位大佬总结和分享，hhhh，就先到这里啦～
