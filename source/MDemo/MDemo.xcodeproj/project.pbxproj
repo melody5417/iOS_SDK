@@ -13,9 +13,26 @@
 		4FBAE46923502F46007D7346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBAE46823502F46007D7346 /* Assets.xcassets */; };
 		4FBAE46C23502F46007D7346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBAE46A23502F46007D7346 /* LaunchScreen.storyboard */; };
 		4FBAE46F23502F46007D7346 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBAE46E23502F46007D7346 /* main.m */; };
-		4FBAE4802350314F007D7346 /* MFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBAE47F2350314F007D7346 /* MFramework.framework */; };
-		4FBAE4812350314F007D7346 /* MFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBAE47F2350314F007D7346 /* MFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A78F5EC524371D42006DFC77 /* MFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78F5EBD24371C8B006DFC77 /* MFramework.framework */; };
+		A78F5EC624371D47006DFC77 /* MFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A78F5EBD24371C8B006DFC77 /* MFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A78F5EBC24371C8B006DFC77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A78F5EB724371C8B006DFC77 /* MFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4FBAE44423502E0D007D7346;
+			remoteInfo = MFramework;
+		};
+		A78F5EBE24371CA3006DFC77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A78F5EB724371C8B006DFC77 /* MFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FBAE44323502E0D007D7346;
+			remoteInfo = MFramework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4FBAE4822350314F007D7346 /* Embed Frameworks */ = {
@@ -24,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4FBAE4812350314F007D7346 /* MFramework.framework in Embed Frameworks */,
+				A78F5EC624371D47006DFC77 /* MFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +59,7 @@
 		4FBAE46B23502F46007D7346 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FBAE46D23502F46007D7346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FBAE46E23502F46007D7346 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4FBAE47F2350314F007D7346 /* MFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A78F5EB724371C8B006DFC77 /* MFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MFramework.xcodeproj; path = ../../MFramework/MFramework.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FBAE4802350314F007D7346 /* MFramework.framework in Frameworks */,
+				A78F5EC524371D42006DFC77 /* MFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +77,9 @@
 		4FBAE45323502F45007D7346 = {
 			isa = PBXGroup;
 			children = (
-				4FBAE47F2350314F007D7346 /* MFramework.framework */,
 				4FBAE45E23502F45007D7346 /* MDemo */,
 				4FBAE45D23502F45007D7346 /* Products */,
+				A78F5EC324371D42006DFC77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +94,7 @@
 		4FBAE45E23502F45007D7346 /* MDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A78F5EB724371C8B006DFC77 /* MFramework.xcodeproj */,
 				4FBAE45F23502F45007D7346 /* AppDelegate.h */,
 				4FBAE46023502F45007D7346 /* AppDelegate.m */,
 				4FBAE46223502F45007D7346 /* ViewController.h */,
@@ -88,6 +106,21 @@
 				4FBAE46E23502F46007D7346 /* main.m */,
 			);
 			path = MDemo;
+			sourceTree = "<group>";
+		};
+		A78F5EB824371C8B006DFC77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A78F5EBD24371C8B006DFC77 /* MFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A78F5EC324371D42006DFC77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +138,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A78F5EBF24371CA3006DFC77 /* PBXTargetDependency */,
 			);
 			name = MDemo;
 			productName = MDemo;
@@ -136,12 +170,28 @@
 			mainGroup = 4FBAE45323502F45007D7346;
 			productRefGroup = 4FBAE45D23502F45007D7346 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A78F5EB824371C8B006DFC77 /* Products */;
+					ProjectRef = A78F5EB724371C8B006DFC77 /* MFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4FBAE45B23502F45007D7346 /* MDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A78F5EBD24371C8B006DFC77 /* MFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MFramework.framework;
+			remoteRef = A78F5EBC24371C8B006DFC77 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4FBAE45A23502F45007D7346 /* Resources */ = {
@@ -168,6 +218,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A78F5EBF24371CA3006DFC77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MFramework;
+			targetProxy = A78F5EBE24371CA3006DFC77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4FBAE46523502F45007D7346 /* Main.storyboard */ = {
@@ -306,7 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 466M85ZLTB;
+				DEVELOPMENT_TEAM = TYELATSY8G;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

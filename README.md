@@ -1,39 +1,20 @@
 # iOS SDK 从开发到发布
 
-最近在做封装 SDK（Framework） 的工作，本篇文章将记录 iOS SDK 从开发到发布的具体流程和经验总结。本文主要以图片形式展示，毕竟有图才是王道嘛，代码可在 [github链接](https://github.com/melody5417/iOS_SDK) 下载。
-
-首先介绍下创建 SDK 工程以及对应 Demo 工程的具体流程。
+本篇文章将记录 iOS SDK 从开发到发布的具体流程和经验总结。本文主要以图片形式展示，代码可在 [github链接](https://github.com/melody5417/iOS_SDK) 下载。
 
 ## 创建 SDK 工程
 
-### 创建 DevFramework workspace，用以管理 SDK 和 Demo project
-
-![创建workspace](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/1创建workspace.png)
-
-### 创建 Cocoa Touch Framework: MFramework，并加入到之前创建的 DevFramework workspace 里
-
-![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_2创建动态库.png)
-
-![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_3创建framework%20project_1.png)
-
-![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_4创建framework%20project_2.png)
+### 创建 Cocoa Touch Framework: MFramework
+![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/1_1创建framework%20project.png)
 
 ### 更改工程设置
 
 * 更改 Info -> development target 到目标系统版本
-![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_5创建framewok%20project_3.png)
-
 * 确认 Target -> Build Settings -> Mach-O Type 为 Dynamic
-![配置工程信息](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_6framework%20确认mac-o%20type.png)
-
 * 更改 Target -> Build Settings -> Build Active Architchture Only 为 NO
-![配置工程信息](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_7_1framework%20build%20active%20architecture.png)
-
 * 更改 Target -> Build Settings -> Bitcode 为 NO
-![配置工程信息](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/2_7_2framework%20bitcode.png)
-
-* 更改 Edit scheme -> Run -> Build Configuration 为 Release
-![公开头文件](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3_2%20修改framework%20configuration.png)
+	
+	![配置工程信息](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/1_2修改framework工程设置.png)
 
 
 ### 配置公共头文件
@@ -49,25 +30,28 @@
 
 ## 创建 Demo 工程
 
-### 创建 MDemo project，加入之前创建的 workspace。
-![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/3_1创建demo%20project_0.png)
-![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/3_2创建demo%20project_1.png)
-![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/3_3创建demo%20project_2.png)
+### 创建 Demo 工程 并集成 MFramework
 
-### 更改 MDemo 工程设置
-![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/3_4创建demo%20project_3.png)
-![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/3_4创建demo%20project_4.png)
-![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/4工程全部创建完预览.png)
+* 如图创建 Demo 工程。
+* 配置 Demo 工程，关闭 bitcode。
+* 将 MFramework 的 .project 拖入 Demo 工程中。
+* 在 Target -> Build Phases 配置 Dependencies 添加 MFramework。
+* 在 Target -> Build Phases 配置 Linked Framework 和 Embeded Binaries 添加 MFramework。
 
-### 集成 SDK
-* 在 Target -> General 配置 Linked Framework 和 Embeded Binaries 为 MFramework
-![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/5_1demo添加embeded和link.png)
 
-* 调用 MFramework 的测试代码，console 打印如预期
+	![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/3_1创建Demo并集成Framework.png)
+
+### 验证
+
+* 调用 MFramework 的测试代码，console 打印如预期。
+
 ![创建MDemo project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/5_2demo调用sdk.png)
 
 
 ## 本地打包 手动发布
+
+* 更改 Edit scheme -> Run -> Build Configuration 为 Release
+![公开头文件](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/6-3_2%20修改framework%20configuration.png)
 
 创建 Cross-platform 的 Aggregate，执行 build 脚本，通过 lipo 命令将之前构建好的 **模拟器架构的 SDK 产物** 和 **真机架构的 SDK 产物** 合成 **适用于真机和模拟器的 SDK 产物**
 
