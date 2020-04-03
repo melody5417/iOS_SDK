@@ -5,7 +5,7 @@
 ## 创建 SDK 工程
 
 ### 创建 Cocoa Touch Framework: MFramework
-![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/1_1创建framework%20project.png)
+![创建 MFramework project](https://raw.githubusercontent.com/melody5417/iOS_SDK/master/resource/1_1%E5%88%9B%E5%BB%BAframework%20project.png)
 
 ### 更改工程设置
 
