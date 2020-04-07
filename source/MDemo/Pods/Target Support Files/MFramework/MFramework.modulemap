@@ -1,6 +1,0 @@
-framework module MFramework {
-  umbrella header "MFramework-umbrella.h"
-
-  export *
-  module * { export * }
-}
