@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170DD7C6FC36F494AADC9F4E34466ACC /* MFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF17EA472020B93028E33005B9C083D1 /* MFramework-dummy.m */; };
+		170DD7C6FC36F494AADC9F4E34466ACC /* MFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C751275823747D53AD33DF2A84F4E6C4 /* MFramework-dummy.m */; };
+		18684D8722F081DE67A3B497453569A4 /* Cat.h in Headers */ = {isa = PBXBuildFile; fileRef = 444CFCDBA482CD48B0CFDF4CF4D13DD5 /* Cat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CE8850F800FAC6BD0F70F2CD68ADA6E /* MFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 60E4BD20614B121CCA726882D7E297EB /* MFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		289CBC3F9157A1E2BD98E731D09466B7 /* Pods-MDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0960C1032EB27C76E51C6E991A975FCB /* Pods-MDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2944B8D903AF44190DA7EEF55F6252DD /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB60298B0FC3B0DCF6B11AC85A4DF3 /* Cat.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2A123743451C6618530CECE08FFA84C6 /* Cat.h in Headers */ = {isa = PBXBuildFile; fileRef = 7842BC4F8EA93C7333383C15C41C336F /* Cat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AC2EAE05FEB9E12C6FB72A1FF6C1CD3 /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 813619150DEE029B83CA877FE14E9425 /* Cat.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		49B8EBD8A332970E29D4FF44AE2BD394 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		BE2DC4233DA65CD50225CF0906441D39 /* MFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1164DF0260437282E03A57AC440B9CFE /* MFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C880BB0F3ED2A7C1DEE32E078C7B158F /* MFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = B760B21563CB41E37AF51E3BA45A9B1E /* MFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE2DC4233DA65CD50225CF0906441D39 /* MFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE24807C97AEA11D782015961AC48DCA /* MFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F00D2A09FAD1D7E8311FF55B381F34D4 /* Pods-MDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F25AE410F200702889E336AE5CE21E97 /* Pods-MDemo-dummy.m */; };
 		F282D8C1B820784587DDB1EF62D40D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -31,27 +31,28 @@
 /* Begin PBXFileReference section */
 		0960C1032EB27C76E51C6E991A975FCB /* Pods-MDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MDemo-umbrella.h"; sourceTree = "<group>"; };
 		0A94258FF8A65584F0AB22325DCD16F4 /* Pods-MDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MDemo-frameworks.sh"; sourceTree = "<group>"; };
-		1164DF0260437282E03A57AC440B9CFE /* MFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MFramework-umbrella.h"; sourceTree = "<group>"; };
 		11F0CDEB68F89FBF80BE0ACA30EF3B7C /* Pods_MDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MDemo.framework; path = "Pods-MDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BFB60298B0FC3B0DCF6B11AC85A4DF3 /* Cat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Cat.m; path = MFramework/Cat.m; sourceTree = "<group>"; };
+		1778B07EFC20F5B2C56DE496035C89D5 /* MFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MFramework.debug.xcconfig; sourceTree = "<group>"; };
+		19FAF1CED9D9FF00949DF73EA8473C52 /* MFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MFramework.release.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3BB64D37E27DF837F371219C790C182B /* MFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MFramework-Info.plist"; sourceTree = "<group>"; };
+		3C3D123616E38432A01290D7C0FAB5E8 /* MFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MFramework.framework; sourceTree = "<group>"; };
 		3FADAC33DCFC05EC2A6C762509F1C996 /* MFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MFramework.framework; path = MFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FEE0E5B1A9A19789EA5BF4B15F0035E /* MFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MFramework-Info.plist"; sourceTree = "<group>"; };
-		4329EC33F81B0A3161C511276CD809BD /* MFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MFramework.debug.xcconfig; sourceTree = "<group>"; };
-		5428AFBD465482A60FBF18C55A458C5F /* MFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MFramework.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		66A2176C0481B14664189EE36CF5BB61 /* License */ = {isa = PBXFileReference; includeInIndex = 1; path = License; sourceTree = "<group>"; };
-		7842BC4F8EA93C7333383C15C41C336F /* Cat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Cat.h; path = MFramework/Cat.h; sourceTree = "<group>"; };
+		444CFCDBA482CD48B0CFDF4CF4D13DD5 /* Cat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Cat.h; path = source/MFramework/MFramework/Cat.h; sourceTree = "<group>"; };
+		60E4BD20614B121CCA726882D7E297EB /* MFramework.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MFramework.h; path = source/MFramework/MFramework/MFramework.h; sourceTree = "<group>"; };
+		6E17249FBEB967E1E2C401BABD90D782 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		73E7D0A74945C327225D641588B3D2A0 /* MFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MFramework-prefix.pch"; sourceTree = "<group>"; };
+		813619150DEE029B83CA877FE14E9425 /* Cat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Cat.m; path = source/MFramework/MFramework/Cat.m; sourceTree = "<group>"; };
 		83EF4D7DD58149861941F2857281544C /* Pods-MDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MDemo.release.xcconfig"; sourceTree = "<group>"; };
+		851C27DA202ACB949F4C7716AB0F9803 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A89612B1FA8A6380A13D63CF727B1A8F /* MFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MFramework.modulemap; sourceTree = "<group>"; };
 		B68BBE375B33504CE0292BE4639DE608 /* Pods-MDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MDemo.modulemap"; sourceTree = "<group>"; };
-		B760B21563CB41E37AF51E3BA45A9B1E /* MFramework.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MFramework.h; path = MFramework/MFramework.h; sourceTree = "<group>"; };
-		BA23ADE8F5553DA9237CDB70D2B571AB /* MFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MFramework.release.xcconfig; sourceTree = "<group>"; };
-		C7956DF6BF53E014E0F53271A5477058 /* MFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MFramework.modulemap; sourceTree = "<group>"; };
-		CF17EA472020B93028E33005B9C083D1 /* MFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MFramework-dummy.m"; sourceTree = "<group>"; };
+		BE24807C97AEA11D782015961AC48DCA /* MFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MFramework-umbrella.h"; sourceTree = "<group>"; };
+		C751275823747D53AD33DF2A84F4E6C4 /* MFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MFramework-dummy.m"; sourceTree = "<group>"; };
 		D43476C5C053E69AF25B69B30A15E681 /* Pods-MDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		D9B1AB719B6BA95964CE6964BF87CB50 /* MFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MFramework-prefix.pch"; sourceTree = "<group>"; };
 		DD92D5482D6DD027FCC5358DD9050BFF /* Pods-MDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		E4AEA1E0DEAAB98AF01E5F1D74268E29 /* MFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MFramework.framework; sourceTree = "<group>"; };
+		E5056F87EFBC1C3D3FE7495AE32E348E /* MFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MFramework.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E5D82F8FA84D79D54C3C6AD6B3CB4930 /* Pods-MDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MDemo-Info.plist"; sourceTree = "<group>"; };
 		F0C6E4E6A6B48ABCE08D4989863C53DB /* Pods-MDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F25AE410F200702889E336AE5CE21E97 /* Pods-MDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MDemo-dummy.m"; sourceTree = "<group>"; };
@@ -77,12 +78,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30662F2CBCD7AB029A7E563B8928F4BC /* Development Pods */ = {
+		31B5E744CB2A084769056FFFA53CB09F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7CAC77F92ADCEE6E689B64486B523AAB /* MFramework */,
+				3C3D123616E38432A01290D7C0FAB5E8 /* MFramework.framework */,
 			);
-			name = "Development Pods";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35678BA2E07B0CAE133AA5BD55517325 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A89612B1FA8A6380A13D63CF727B1A8F /* MFramework.modulemap */,
+				C751275823747D53AD33DF2A84F4E6C4 /* MFramework-dummy.m */,
+				3BB64D37E27DF837F371219C790C182B /* MFramework-Info.plist */,
+				73E7D0A74945C327225D641588B3D2A0 /* MFramework-prefix.pch */,
+				BE24807C97AEA11D782015961AC48DCA /* MFramework-umbrella.h */,
+				1778B07EFC20F5B2C56DE496035C89D5 /* MFramework.debug.xcconfig */,
+				19FAF1CED9D9FF00949DF73EA8473C52 /* MFramework.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "source/MDemo/Pods/Target Support Files/MFramework";
 			sourceTree = "<group>";
 		};
 		3C3DB0198FF46BF0B18692ADAF591FB1 /* Pods-MDemo */ = {
@@ -111,41 +127,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4AFF99F3747747701635AC5F8623A665 /* Frameworks */ = {
+		87A9630EED6A6925516EC07A9CD93C70 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E4AEA1E0DEAAB98AF01E5F1D74268E29 /* MFramework.framework */,
+				935A1090BA298E88D3AF9A676591E5A3 /* MFramework */,
 			);
-			name = Frameworks;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		593A8E28258D3430621A28C3F5A17C17 /* Support Files */ = {
+		8A5B86AD70BB5FC9BF39E416C9E53E32 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				C7956DF6BF53E014E0F53271A5477058 /* MFramework.modulemap */,
-				CF17EA472020B93028E33005B9C083D1 /* MFramework-dummy.m */,
-				3FEE0E5B1A9A19789EA5BF4B15F0035E /* MFramework-Info.plist */,
-				D9B1AB719B6BA95964CE6964BF87CB50 /* MFramework-prefix.pch */,
-				1164DF0260437282E03A57AC440B9CFE /* MFramework-umbrella.h */,
-				4329EC33F81B0A3161C511276CD809BD /* MFramework.debug.xcconfig */,
-				BA23ADE8F5553DA9237CDB70D2B571AB /* MFramework.release.xcconfig */,
+				6E17249FBEB967E1E2C401BABD90D782 /* LICENSE */,
+				E5056F87EFBC1C3D3FE7495AE32E348E /* MFramework.podspec */,
+				851C27DA202ACB949F4C7716AB0F9803 /* README.md */,
 			);
-			name = "Support Files";
-			path = "../MDemo/Pods/Target Support Files/MFramework";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		7CAC77F92ADCEE6E689B64486B523AAB /* MFramework */ = {
+		935A1090BA298E88D3AF9A676591E5A3 /* MFramework */ = {
 			isa = PBXGroup;
 			children = (
-				7842BC4F8EA93C7333383C15C41C336F /* Cat.h */,
-				2BFB60298B0FC3B0DCF6B11AC85A4DF3 /* Cat.m */,
-				B760B21563CB41E37AF51E3BA45A9B1E /* MFramework.h */,
-				4AFF99F3747747701635AC5F8623A665 /* Frameworks */,
-				A8CA0521E57A5A341E19E557ABFD6696 /* Pod */,
-				593A8E28258D3430621A28C3F5A17C17 /* Support Files */,
+				444CFCDBA482CD48B0CFDF4CF4D13DD5 /* Cat.h */,
+				813619150DEE029B83CA877FE14E9425 /* Cat.m */,
+				60E4BD20614B121CCA726882D7E297EB /* MFramework.h */,
+				31B5E744CB2A084769056FFFA53CB09F /* Frameworks */,
+				8A5B86AD70BB5FC9BF39E416C9E53E32 /* Pod */,
+				35678BA2E07B0CAE133AA5BD55517325 /* Support Files */,
 			);
 			name = MFramework;
-			path = ../../MFramework;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		A02474B1E7C5DA39AB7DF11158CF2FD6 /* Targets Support Files */ = {
@@ -154,15 +165,6 @@
 				3C3DB0198FF46BF0B18692ADAF591FB1 /* Pods-MDemo */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		A8CA0521E57A5A341E19E557ABFD6696 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				66A2176C0481B14664189EE36CF5BB61 /* License */,
-				5428AFBD465482A60FBF18C55A458C5F /* MFramework.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -177,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				30662F2CBCD7AB029A7E563B8928F4BC /* Development Pods */,
+				87A9630EED6A6925516EC07A9CD93C70 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				3ECF32055421C9119764C045B0441117 /* Products */,
 				A02474B1E7C5DA39AB7DF11158CF2FD6 /* Targets Support Files */,
@@ -207,9 +209,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A123743451C6618530CECE08FFA84C6 /* Cat.h in Headers */,
+				18684D8722F081DE67A3B497453569A4 /* Cat.h in Headers */,
 				BE2DC4233DA65CD50225CF0906441D39 /* MFramework-umbrella.h in Headers */,
-				C880BB0F3ED2A7C1DEE32E078C7B158F /* MFramework.h in Headers */,
+				1CE8850F800FAC6BD0F70F2CD68ADA6E /* MFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +265,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -303,7 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2944B8D903AF44190DA7EEF55F6252DD /* Cat.m in Sources */,
+				3AC2EAE05FEB9E12C6FB72A1FF6C1CD3 /* Cat.m in Sources */,
 				170DD7C6FC36F494AADC9F4E34466ACC /* MFramework-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,7 +473,7 @@
 		};
 		5A43E34EE1597C30211ED1E684BC3F67 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA23ADE8F5553DA9237CDB70D2B571AB /* MFramework.release.xcconfig */;
+			baseConfigurationReference = 19FAF1CED9D9FF00949DF73EA8473C52 /* MFramework.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -506,7 +508,7 @@
 		};
 		ACE4D5FF8E9FB69E4307878C8B69E2C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4329EC33F81B0A3161C511276CD809BD /* MFramework.debug.xcconfig */;
+			baseConfigurationReference = 1778B07EFC20F5B2C56DE496035C89D5 /* MFramework.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -1,16 +1,16 @@
 PODS:
-  - MFramework (0.0.1)
+  - MFramework (0.0.2)
 
 DEPENDENCIES:
-  - MFramework (from `../MFramework/`)
+  - MFramework (from `../../`)
 
 EXTERNAL SOURCES:
   MFramework:
-    :path: "../MFramework/"
+    :path: "../../"
 
 SPEC CHECKSUMS:
-  MFramework: 3ad5054e293e0668a3105a06fc3fe13926a983ee
+  MFramework: 65e6ca167b33d6ac08065395f9db390ceebaf77e
 
-PODFILE CHECKSUM: 655d70a576dd1b7971398fcbf099008287734b70
+PODFILE CHECKSUM: 5ff6f7c47b812273d7ad3eed983de13d72fcfde9
 
 COCOAPODS: 1.9.1

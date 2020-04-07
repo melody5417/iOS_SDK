@@ -1,13 +1,10 @@
 {
   "name": "MFramework",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "Demo of Deploy MFramework.",
   "description": "Deploy MFramework to Cocoapods",
   "homepage": "https://github.com/melody5417/iOS_SDK",
-  "license": {
-    "type": "MIT",
-    "file": "License"
-  },
+  "license": "MIT",
   "authors": {
     "melody5417": "lengningshang@126.com"
   },
@@ -16,8 +13,8 @@
   },
   "source": {
     "git": "https://github.com/melody5417/iOS_SDK.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
-  "source_files": "MFramework/*.{h,m}",
+  "source_files": "source/MFramework/MFramework/*.{h,m}",
   "vendored_frameworks": "MFramework.framework"
 }
