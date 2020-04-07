@@ -145,7 +145,8 @@ Updating spec repo `trunk`
 * 如果搜索不到，执行 rm ~/Library/Caches/CocoaPods/search_index.json删除缓存索引再次尝试。
 
 ## 进阶：配置 podspec 支持 source 和 framework 灵活切换
-开发或者调试时，为了查看源代码，可以配置环境变量来区分两种编译效果
+开发或者调试时，为了查看源代码，可以配置环境变量来区分两种编译效果.
+这里时刻谨记 pod 是 ruby 语法，可以基于 ruby 各种折腾～
 
 ```
 Pod::Spec.new do |spec|
