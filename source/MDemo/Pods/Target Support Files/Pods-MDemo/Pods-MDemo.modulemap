@@ -1,0 +1,6 @@
+framework module Pods_MDemo {
+  umbrella header "Pods-MDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
