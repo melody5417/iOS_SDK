@@ -2,7 +2,11 @@
 
 在 **[iOS SDK 从开发到发布系列一]()** 中介绍了如何创建 Framework， 打包支持模拟器架构，支持真机架构的版本，以及持续构建。
 
-然而系列一文章的产物是 Framework，iOS更常用的依赖管理工具是CocoaPods。 本文系列一基础之上介绍如何将 Framwork 部署到 CocoaPods。代码可在 [github链接](https://github.com/melody5417/iOS_SDK) 下载，本篇文章代码对应 **Tag 0.0.2**。
+然而系列一文章的产物是 Framework，iOS更常用的依赖管理工具是CocoaPods。 本文系列一基础之上介绍如何将 Framwork 部署到 CocoaPods。代码可在 [github链接](https://github.com/melody5417/iOS_SDK) 下载，本篇文章代码对应：
+
+* **Tag 0.0.2** pod发布采用 source code 方式
+* **Tag 0.0.3** pod发布采用 framework 方式
+* **Tag 0.0.4** pod source 拉取 zip，不依赖 github
 
 ## 创建 podspec 文件
 在 git repo 的根目录下创建 **podspec** 文件。
@@ -35,6 +39,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "melody5417" => "lengningshang@126.com" }
   spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/melody5417/iOS_SDK.git", :tag => "#{spec.version}" }
+#  spec.source       = { :http => 'https://dldir1.qq.com/invc/tt/translator/HistoryData/MFramework.framework.zip' }
   spec.source_files = "source/MFramework/MFramework/*.{h,m}"
   spec.vendored_frameworks = "MFramework.framework"
 end
@@ -43,6 +48,7 @@ end
 
 * podspec 的路径建议是 repo 的根目录
 * license 文件建议和 podspec 同路径，默认名 LICENSE
+* source 方式支持 git， http等。 
 * source_files 的路径是相对于 podspec 文件的相对路径
 * vendored_frameworks 的路径建议和 podspec 同级
 * vendored_frameworks 必须同时支持模拟器和真机，确认方法：
