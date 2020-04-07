@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "MFramework"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Demo of Deploy MFramework."
   spec.description  = <<-DESC
                         Deploy MFramework to Cocoapods
